@@ -1,16 +1,21 @@
-## Hi there 👋
+## Hi, I'm @docryte 👋
 
-<!--
-**docryte/docryte** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm Go&Python Backend developer. Currently working on developing personal account API in Qrooto.com.
 
-Here are some ideas to get you started:
+**My current stack:**
+ - Python 3.X
+ - Golang
+ - MongoDB
+ - PostgreSQL
+ - Clickhouse
+ - RabbitMQ
+ - Redis
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+ **My achievements on current workplace:**
+ - Developed personal account API from scratch.
+ - Developed high-perfomant microservice for serving files with image compression.
+ - Developed internal library for authorization in different microservices for different user-types.
+ - Developed internal library for proccessing and creating juridical documents.
+ - Parcipiated in hackathon on developing HR-service and took 4th place out of more than 20 parcipiants.
+
+I'm open for work. If you want hire me, you can contact me via **Email (docryte@gmail.com)** or **Telegram (@docryte)**.
