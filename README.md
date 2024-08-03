@@ -1,8 +1,8 @@
 ## Hi, I'm @docryte 👋
 
-I'm Go&Python Backend developer. Currently working on developing personal account API in Qrooto.com.
+I'm a Go & Python Backend developer, currently working on developing a personal account API at Qrooto.com.
 
-**My current stack:**
+**My current stack includes:**
  - Python 3.X
  - Golang
  - MongoDB
@@ -11,11 +11,11 @@ I'm Go&Python Backend developer. Currently working on developing personal accoun
  - RabbitMQ
  - Redis
 
- **My achievements on current workplace:**
- - Developed personal account API from scratch.
- - Developed high-perfomant microservice for serving files with image compression.
- - Developed internal library for authorization in different microservices for different user-types.
- - Developed internal library for proccessing and creating juridical documents.
- - Parcipiated in hackathon on developing HR-service and took 4th place out of more than 20 parcipiants.
+**My achievements at my current workplace:**
+ - Developed the personal account API from scratch.
+ - Developed a high-performance microservice for serving files with image compression.
+ - Developed an internal library for authorization in different microservices for different user types.
+ - Developed an internal library for processing and creating juridical documents.
+ - Participated in a hackathon on developing an HR service and took 4th place out of more than 20 participants.
 
-I'm open for work. If you want hire me, you can contact me via **Email (docryte@gmail.com)** or **Telegram (@docryte)**.
+I'm open for work. If you want to hire me, you can contact me via **email (docryte@gmail.com)** or **Telegram (@docryte)**.
