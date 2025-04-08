@@ -21,7 +21,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            export DOMAINPORT=":80"
+            export DOMAINPORT="0.0.0.0:80"
             cd docryte
             git fetch && git pull
             go build -o docryte docryte
