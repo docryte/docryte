@@ -26,5 +26,5 @@ jobs:
             git fetch && git pull
             go build -o docryte docryte
             pkill docryte
-            ./docryte
+            ./docryte &
             
