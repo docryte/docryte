@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 
 	"golang.org/x/crypto/acme/autocert"
 )
@@ -14,6 +15,11 @@ func handleStatic(mux *http.ServeMux) {
 }
 
 func main() {
+	mode := os.Getenv("MODE")
+	if mode == "" {
+		mode = "DEBUG"
+	}
+
 	mux := http.NewServeMux()
 	handleStatic(mux)
 
@@ -23,8 +29,12 @@ func main() {
 		mux.HandleFunc("/", indexPage(temp))
 	}
 
-	if err := http.Serve(autocert.NewListener("docryte.site"), mux); err != nil {
-		log.Fatal("Error while starting server: ", err)
+	if mode == "PROD" {
+		http.Serve(autocert.NewListener("docryte.site"), mux)
+	} else if mode == "DEBUG" {
+		http.ListenAndServe(":80", mux)
+	} else {
+		log.Fatal("MODE environment variable should be either PROD or DEBUG: ", mode)
 	}
 }
 
