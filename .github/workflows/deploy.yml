@@ -1,0 +1,30 @@
+name: Deploy
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+
+      - name: multiple command
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            export DOMAINPORT="0.0.0.0:80"
+            cd docryte
+            git fetch && git pull
+            go build -o docryte docryte
+            pkill docryte || true
+            nohup ./docryte > docryte.log 2>&1 &
+            
