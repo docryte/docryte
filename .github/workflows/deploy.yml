@@ -23,6 +23,7 @@ jobs:
           script: |
             cd docryte
             git fetch && git pull
+            sudo pacman -S go=2:1.24.2-1 --noconfirm
             go build -o docryte docryte
             pkill docryte
             ./docryte
