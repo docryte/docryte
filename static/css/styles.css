@@ -1,0 +1,124 @@
+@font-face {
+    font-family: "Handjet";
+    src:
+        local("Handjet"),
+        url("/static/fonts/Handjet.ttf") format("truetype");
+}
+
+body {
+    margin: 0;
+    box-shadow: inset 0 0 36px #0005;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    --accent: #111;
+    color: l;
+}
+
+h1,
+h2,
+h3,
+h4,
+footer {
+    font-family: "Handjet";
+    font-variation-settings:
+        "ELSH" 11,
+        "ELGR" 1;
+    line-height: 0.8;
+    margin: 0;
+}
+
+h1 {
+    font-size: 128px;
+    font-weight: 300;
+}
+
+h2 {
+    font-weight: 350;
+    font-size: 64px;
+}
+
+h3 {
+    font-weight: 250;
+    font-size: 48px;
+}
+
+header {
+    height: 100svh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    font-size: 30px;
+    font-weight: 175;
+    justify-content: space-between;
+    padding: 16px 32px;
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 0;
+}
+
+a,
+a:visited {
+    color: blueviolet;
+    text-decoration: none;
+}
+
+header,
+footer {
+    background-color: var(--accent);
+    display: flex;
+    color: lightgray;
+    width: 100%;
+}
+
+main {
+    max-width: 65vw;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.justify-line {
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: fit-content;
+}
+
+.list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px;
+    background-color: var(--accent);
+    width: fit-content;
+    border-radius: 16px;
+    color: lightgray;
+    gap: 8px;
+    width: 320px;
+    height: 200px;
+}
+
+.item p {
+    font-family: "Roboto";
+    margin: 0;
+}
