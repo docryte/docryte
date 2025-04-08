@@ -149,10 +149,6 @@ main {
 }
 
 @media screen and (max-width: 768px) {
-    main {
-        padding: 16px;
-    }
-
     .list {
         grid-template-columns: auto auto;
         gap: 4px;
