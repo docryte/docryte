@@ -21,5 +21,10 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            whoami
-            ls -al
+            cd docryte
+            git fetch && git pull
+            pacman -S go
+            go build -o docryte docryte
+            pkill docryte
+            ./docryte
+            
