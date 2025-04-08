@@ -23,7 +23,6 @@ jobs:
           script: |
             cd docryte
             git fetch && git pull
-            pacman -S go
             go build -o docryte docryte
             pkill docryte
             ./docryte
