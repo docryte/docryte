@@ -138,10 +138,12 @@ main {
 
     .list {
         grid-template-columns: auto;
+        box-sizing: border-box;
     }
 
     .item {
         width: 100%;
         height: 150px;
+        box-sizing: border-box;
     }
 }
