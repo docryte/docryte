@@ -35,4 +35,4 @@ jobs:
 
       - name: Restart App
         run: |
-          sshpass -p "${{ secrets.FTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_HOST }} "pkill docryte; nohup ./${{ secrets.SERVER_PATH }}/docryte > app.log 2>&1 &"
+          sshpass -p "${{ secrets.FTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_HOST }} "pkill docryte; nohup ./${{ secrets.SERVER_PATH }}docryte > app.log 2>&1 &"
