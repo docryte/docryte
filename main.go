@@ -8,21 +8,22 @@ import (
 	"golang.org/x/crypto/acme/autocert"
 )
 
-func handleStatic() {
+func handleStatic(mux *http.ServeMux) {
 	static := http.FileServer(http.Dir("./static"))
-	http.Handle("/static/", http.StripPrefix("/static/", static))
+	mux.Handle("/static/", http.StripPrefix("/static/", static))
 }
 
 func main() {
-	handleStatic()
+	mux := http.NewServeMux()
+	handleStatic(mux)
 	temp, err := template.ParseFiles("./templates/main.html")
 	if err != nil {
 		log.Fatal("Error while loading template: ", err)
 	}
 
-	http.HandleFunc("/", indexPage(temp))
+	mux.HandleFunc("/", indexPage(temp))
 
-	err = http.Serve(autocert.NewListener("docryte.site"), nil)
+	err = http.Serve(autocert.NewListener("docryte.site"), mux)
 	if err != nil {
 		log.Fatal("Error while starting server: ", err)
 	}
