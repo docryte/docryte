@@ -13,7 +13,6 @@ body {
     align-items: center;
     gap: 32px;
     --accent: #111;
-    color: l;
 }
 
 h1,
@@ -78,6 +77,7 @@ footer {
 }
 
 main {
+    padding: 8px;
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -110,7 +110,7 @@ main {
     padding: 32px;
     background-color: var(--accent);
     width: fit-content;
-    border-radius: 16px;
+    border-radius: 8px;
     color: lightgray;
     gap: 8px;
     width: 320px;
@@ -150,7 +150,7 @@ main {
 
 @media screen and (max-width: 768px) {
     .list {
-        grid-template-columns: auto auto;
+        grid-template-columns: auto;
         gap: 4px;
         box-sizing: border-box;
     }
