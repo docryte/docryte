@@ -78,8 +78,6 @@ footer {
 }
 
 main {
-    max-width: 65vw;
-    width: fit-content;
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -99,9 +97,9 @@ main {
 }
 
 .list {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
     gap: 8px;
-    flex-wrap: wrap;
 }
 
 .item {
@@ -121,4 +119,24 @@ main {
 .item p {
     font-family: "Roboto";
     margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 64px;
+    }
+
+    .list {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    .list {
+        grid-template-columns: auto;
+    }
 }
