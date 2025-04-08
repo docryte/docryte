@@ -25,6 +25,6 @@ jobs:
             cd docryte
             git fetch && git pull
             go build -o docryte docryte
-            pkill docryte
-            ./docryte &
+            pkill docryte || true
+            nohup ./docryte > docryte.log 2>&1 &
             
