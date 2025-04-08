@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 )
 
 func handleStatic() {
@@ -20,7 +21,7 @@ func main() {
 
 	http.HandleFunc("/", indexPage(temp))
 
-	err = http.ListenAndServe(":8080", nil)
+	err = http.ListenAndServe(os.Getenv("DOMAINPORT"), nil)
 	if err != nil {
 		log.Fatal("Error while starting server: ", err)
 	}
