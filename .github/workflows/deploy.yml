@@ -13,26 +13,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Set up Go
-        uses: actions/setup-go@v5.4.0
-        with:
-          go-version: '1.24.2'
 
-      - name: Build Go Application
-        run: go build -o docryte docryte
-        
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir:  ${{ secrets.SERVER_PATH }}
-          local-dir: ./
-          exclude: |
-            .git*
-            README.MD
-
-      - name: Restart App
-        run: |
-          sshpass -p "${{ secrets.FTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_HOST }} "pkill docryte; nohup ./${{ secrets.SERVER_PATH }}docryte > app.log 2>&1 &"
+      - name: multiple command
+        uses: appleboy/ssh-action@v1
+          with:
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            password: ${{ secrets.PASSWORD }}
+            script: |
+              whoami
+              ls -al
