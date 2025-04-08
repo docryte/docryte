@@ -30,7 +30,7 @@ footer {
 }
 
 h1 {
-    font-size: 5em;
+    font-size: 128px;
     font-weight: 300;
 }
 
@@ -81,6 +81,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    box-sizing: border-box;
 }
 
 .justify-line {
@@ -122,6 +123,26 @@ main {
 }
 
 @media screen and (max-width: 1024px) {
+    header {
+        height: 60svh;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 48px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
     .list {
         grid-template-columns: auto auto;
     }
