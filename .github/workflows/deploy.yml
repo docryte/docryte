@@ -21,6 +21,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
+            export DOMAINPORT=":80"
             cd docryte
             git fetch && git pull
             sudo pacman -S go=2:1.24.2-1 --noconfirm
