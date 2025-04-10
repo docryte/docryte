@@ -22,7 +22,8 @@ h1,
 h2,
 h3,
 h4,
-footer {
+footer,
+#contact {
     font-family: "Handjet";
     font-variation-settings:
         "ELSH" 11,
@@ -135,6 +136,8 @@ main {
     display: block;
     padding: 32px 16px;
     margin-bottom: 0;
+    font-size: 48px;
+    font-weight: 250;
 }
 
 @media screen and (max-width: 1024px) {
