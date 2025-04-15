@@ -9,15 +9,6 @@ import (
 	"golang.org/x/crypto/acme/autocert"
 )
 
-func redirectToTls(w http.ResponseWriter, r *http.Request) {
-	http.Redirect(w, r, "https://"+r.Host+r.RequestURI, http.StatusMovedPermanently)
-}
-
-func handleStatic(mux *http.ServeMux) {
-	static := http.FileServer(http.Dir("./static"))
-	mux.Handle("/static/", http.StripPrefix("/static/", static))
-}
-
 func main() {
 	mode := os.Getenv("MODE")
 	if mode == "" {
@@ -33,18 +24,15 @@ func main() {
 		mux.HandleFunc("/", indexPage(temp))
 	}
 
-	if mode == "PROD" {
-		go func() {
-			if err := http.ListenAndServe(":80", http.HandlerFunc(redirectToTls)); err != nil {
-				log.Fatalf("ListenAndServe error: %v", err)
-			}
-		}()
-		http.Serve(autocert.NewListener("docryte.site"), mux)
-	} else if mode == "DEBUG" {
-		http.ListenAndServe(":80", mux)
-	} else {
-		log.Fatal("MODE environment variable should be either PROD or DEBUG: ", mode)
-	}
+	go func() {
+		err := http.ListenAndServe(":80", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			http.Redirect(w, r, "https://"+r.Host+r.RequestURI, http.StatusMovedPermanently)
+		}))
+		if err != nil {
+			log.Fatalf("Error listening HTTP: %v", err)
+		}
+	}()
+	http.Serve(autocert.NewListener("docryte.site"), mux)
 }
 
 func indexPage(template *template.Template) func(http.ResponseWriter, *http.Request) {
@@ -54,4 +42,9 @@ func indexPage(template *template.Template) func(http.ResponseWriter, *http.Requ
 			w.Write([]byte(err.Error()))
 		}
 	}
+}
+
+func handleStatic(mux *http.ServeMux) {
+	static := http.FileServer(http.Dir("./static"))
+	mux.Handle("/static/", http.StripPrefix("/static/", static))
 }
