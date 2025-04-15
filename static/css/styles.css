@@ -1,8 +1,8 @@
 @font-face {
-    font-family: "Handjet";
+    font-family: "Noto Serif";
     src:
-        local("Handjet"),
-        url("/static/fonts/Handjet.ttf") format("truetype");
+        local("Noto Serif"),
+        url("/static/fonts/NotoSerif.ttf") format("truetype");
 }
 
 body {
@@ -22,37 +22,48 @@ h1,
 h2,
 h3,
 h4,
-footer,
+footer p,
 #contact {
-    font-family: "Handjet";
+    font-family: "Noto Serif";
     font-variation-settings:
-        "ELSH" 11,
-        "ELGR" 1;
-    line-height: 0.8;
+        "WDTH" 75,
+        "CTGR" 30;
+    line-height: 0.9;
     margin: 0;
 }
 
 h1 {
-    font-size: 128px;
+    font-size: 48px;
     font-weight: 300;
 }
 
 h2 {
     padding: 0 8px;
     font-weight: 350;
-    font-size: 64px;
+    font-size: 48px;
 }
 
 h3 {
     font-weight: 250;
-    font-size: 48px;
+    font-size: 36px;
 }
 
 header {
+    gap: 32px;
+    background-color: lawngreen;
     height: 100svh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+header img {
+    max-width: 80%;
+}
+
+p {
+    font-family: "Roboto";
+    margin: 0;
 }
 
 footer {
@@ -61,9 +72,8 @@ footer {
     justify-content: space-between;
     padding: 16px 32px;
     box-sizing: border-box;
-}
-
-footer p {
+    color: lightgray;
+    background-color: var(--accent);
     margin: 0;
 }
 
@@ -75,9 +85,7 @@ a:visited {
 
 header,
 footer {
-    background-color: var(--accent);
     display: flex;
-    color: lightgray;
     width: 100%;
 }
 
@@ -98,7 +106,7 @@ main {
 .block {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
     width: fit-content;
 }
 
@@ -122,11 +130,6 @@ main {
     height: 200px;
 }
 
-.item p {
-    font-family: "Roboto";
-    margin: 0;
-}
-
 #contact {
     position: sticky;
     bottom: 0;
@@ -148,19 +151,23 @@ main {
     }
 
     h1 {
-        font-size: 36px;
+        font-size: 24px;
     }
 
     h2 {
-        font-size: 48px;
+        font-size: 40px;
     }
 
     h3 {
         font-size: 32px;
     }
 
+    footer p {
+        font-size: 24px;
+    }
+
     p {
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .list {
@@ -177,6 +184,7 @@ main {
 
     .item {
         padding: 24px;
+        gap: 24px;
         width: 100%;
         height: auto;
         box-sizing: border-box;
