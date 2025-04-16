@@ -25,9 +25,7 @@ func main() {
 	}
 
 	go func() {
-		err := http.ListenAndServe(":80", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			http.Redirect(w, r, "https://"+r.Host+r.RequestURI, http.StatusMovedPermanently)
-		}))
+		err := http.ListenAndServe(":80", mux)
 		if err != nil {
 			log.Fatalf("Error listening HTTP: %v", err)
 		}
