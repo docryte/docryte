@@ -226,6 +226,12 @@ main {
     text-align: left;
 }
 
+#contact form label[for="success"] {
+    text-align: center;
+    font-size: 14px;
+    margin-top: -8px;
+}
+
 #contact form button {
     border: none;
     background-color: var(--background);
@@ -235,6 +241,10 @@ main {
     padding: 8px 16px;
     width: 100%;
     margin-bottom: 16px;
+}
+
+#contact form button:disabled {
+    background-color: var(--secondary);
 }
 
 #contact form a {

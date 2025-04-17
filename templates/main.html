@@ -258,6 +258,7 @@
           <label for="contact">Телефон/почта/Telegram-юзернейм</label>
           <input title="contact" required="true">
           <button type="submit">Отправить</button>
+          <label for="success" style="display: none;">Свяжусь с Вами в ближайшее время</label>
           <input type="checkbox" title="agreement" required="true">
           <label for="agreement">
             Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных *
@@ -283,6 +284,9 @@
           "contact": contact
         })
         xhr.send(data);
+        form.querySelector("label[for='success']").style.display = "block";
+        form.querySelector("button").disabled = true;
+        form.querySelector("button").setHTML("Спасибо за ответ!");
       }
     </script>
   </body>
