@@ -294,7 +294,7 @@ img {
         --font-size-2: 32px;
         --font-size-3: 24px;
         --font-size-4: 18px;
-        --font-size-5: 16px;
+        --font-size-5: 12px;
     }
     h1 {
         max-width: 90%;
@@ -307,5 +307,8 @@ img {
     }
     .list {
         grid-template-columns: 1fr;
+    }
+    .item {
+        height: 200px;
     }
 }
