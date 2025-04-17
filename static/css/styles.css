@@ -255,6 +255,7 @@ main {
 
 #contact {
     width: fit-content;
+    max-width: 100%;
 }
 
 #contact form button:hover {
@@ -283,4 +284,19 @@ img {
 
 .button:hover {
     background-color: var(--accent);
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        max-width: 90%;
+    }
+    header {
+        justify-content: center;
+    }
+    #menu {
+        display: none;
+    }
+    .list {
+        grid-template-columns: 1fr;
+    }
 }
