@@ -13,7 +13,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-
       - name: multiple command
         uses: appleboy/ssh-action@v1
         with:
@@ -21,10 +20,11 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            export MODE=PROD
+            export TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }}
+            export SITE_DOMAIN=${{ secrets.SITE_DOMAIN }}
+            export ADMIN_USER_ID=${{ secrets.ADMIN_USER_ID }}
             cd docryte
             git fetch && git pull
             go build -o docryte docryte
             pkill docryte || true
             nohup ./docryte > docryte.log 2>&1 &
-            
